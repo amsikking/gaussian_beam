@@ -1,0 +1,65 @@
+<!-- comment -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Power_through_aperture</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/prism.css">
+    <script src="javascript/python-highlighting/prism.js"></script>
+    <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script src="javascript/update_figures.js"></script>
+    <script src="javascript/reference_list/reference_list.js"></script>
+</head>
+
+<body>
+<section>
+	<a href="https://amsikking.github.io/">Home page</a>
+	<h1>amsikking: Gaussian beam</h1>
+	<a href="./index.html">Index</a>
+
+	<h2>Power through aperture</h2>
+	<p>
+	Following the same <em>shell</em> integration method as the 'total power'
+	derivation, we can find the power as a function of \(r\) and \(z\) in a general 
+	form:
+	
+	\[ P(r,z) = 2\pi \int_0^r rI(r,z) dr \tag{1}\]
+	
+	where:
+	
+	\[ \int rI(r,z) dr = -\frac{1}{4}w(z)^2 I(r,z) \tag{2}\]
+	
+	and so:
+	
+	\[ P(r,z) = 2\pi \left[ -\frac{1}{4}w(z)^2 I(r,z) \right]_0^{r} \tag{3}\]
+	
+	and from the definition of \(I(r,z)\):
+	
+	\[ w(z)^2I(r,z) = I_0 w_0^2 \exp \left(\frac{-2r^2}{w(z)^2}\right) \tag{4}\]
+
+	so we can rewrite (3) into:
+	
+	\[ P(r,z) = \frac{1}{2} \pi I_0 w_0^2 
+	\left[ -\exp \left(\frac{-2r^2}{w(z)^2}\right) \right]_0^{r} \tag{5}\]
+	
+	and evalute to the convenient form:
+	
+	\[ P(r,z) = P_0 \left[1 - \exp \left(\frac{-2r^2}{w(z)^2}\right) \right] \tag{6}\]
+	
+	Note that if we set the apeture to radius to \(r=w(z)\) then we block about 13.5%
+	of the light:
+	
+	\[ P(w(z),z) = P_0 \left[1 - \frac{1}{e^2} \right] \approx 0.86P_0 \tag{7}\]
+	</p>
+	
+	<figure>
+    <img src="figures/power_through_aperture.png" alt="power_through_aperture.png">
+    <figcaption>
+	(<a href="figures/power_through_aperture.py">Python script</a>)</figcaption>
+	</figure>
+
+</section>
+</body>
+</html>

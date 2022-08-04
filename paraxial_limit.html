@@ -1,0 +1,69 @@
+<!-- comment -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Paraxial_limit</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/prism.css">
+    <script src="javascript/python-highlighting/prism.js"></script>
+    <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script src="javascript/update_figures.js"></script>
+    <script src="javascript/reference_list/reference_list.js"></script>
+</head>
+
+<body>
+<section>
+	<a href="https://amsikking.github.io/">Home page</a>
+	<h1>amsikking: Gaussian beam</h1>
+	<a href="./index.html">Index</a>
+
+	<h2>Paraxial limit</h2>
+	<p>
+	From
+	<a class="citation" href="https://doi.org/10.1364/OL.32.000927" 
+	title="Limits of the paraxial approximation in laser beams; 
+	P. Vaveliuk, B. Ruiz and A. Lencina; 
+	Optics Letters, vol 32(8), pp927-929, (2007)">Vaveliuk 2007</a> the	paraxiality 
+	estimator \(\tilde{P}\) for a Gaussian beam \((N=0)\) is:
+	
+	\[ \tilde{P} = 1 - 1/\tilde{k}^2 \tag{1}\]
+
+	where:
+
+	\[ \tilde{k} = kw_0 = \frac{2 \pi w_0}{\lambda} \tag{2}\]
+	
+	They suggest in the main text (and Fig. 1.) that it is reasonable to 
+	take:
+	
+	\[ \tilde{P} \geq 0.88 \tag{3}\]
+	
+	So we can rewrite (1) with \(0.88 \approx 8/9\):
+	
+	\[ 1 - 1/\tilde{k}^2 \geq 8/9 \tag{4}\]
+	
+	which reduces to:
+	
+	\[ 1/3 \geq 1/\tilde{k} \tag{5}\]
+	
+	or more conveniently:
+	
+	\[ \frac{2 \pi w_0}{\lambda} \geq 3 \tag{6}\]
+	
+	substituting in the vacuum wavelength \(\lambda_0(=n\lambda)\) and rearranging
+	gives:
+	
+	\[ w_0 \geq \frac{3 \lambda_0}{2 \pi n}  \tag{7}\]
+	
+	So for a Gaussian beam in <em>air</em> the diameter \(d_0(=2 w_0)\) should be 
+	respect:
+	
+	\[ d_0 \geq \lambda_0 \tag{8}\]
+	
+	(for \(n=1\) and the approximation \(3/\pi \sim 1\))
+	</p>
+
+</section>
+</body>
+</html>

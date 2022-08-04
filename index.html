@@ -1,0 +1,70 @@
+<!-- comment -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Gaussian_beam</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/prism.css">
+    <script src="javascript/python-highlighting/prism.js"></script>
+    <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script src="javascript/update_figures.js"></script>
+    <script src="javascript/reference_list/reference_list.js"></script>
+</head>
+
+<body>
+<section>
+	<a href="https://amsikking.github.io/">Home page</a>
+	<h1>amsikking: Gaussian beam</h1>
+	<a href="https://github.com/amsikking/gaussian_beam">GitHub repository</a>
+	<h2>Contents</h2>
+	
+	<ul>
+	<li><a href="./paraxial_limit.html">Paraxial limit</a></li>
+	<li><a href="./rayleigh_range.html">Rayleigh range</a></li>
+	<li><a href="./peak_intensity.html">Peak intensity</a></li>
+	<li><a href="./axial_intensity.html">Axial intensity</a></li>
+	<li><a href="./radial_intensity.html">Radial intensity</a></li>
+	<li><a href="./beam_profile.html">Beam profile</a></li>
+	<li><a href="./beam_divergence.html">Beam divergence</a></li>
+	<li><a href="./numerical_aperture.html">Numerical aperture</a></li>
+	<li><a href="./total_power.html">Total power</a></li>
+	<li><a href="./power_through_aperture.html">Power through aperture</a></li>
+	</ul>
+
+	<h2>Intensity equations</h2>
+	<p>
+	From
+	<a class="citation" href="https://atomoptics.uoregon.edu/~dsteck/teaching/optics/" 
+	title="Classical and Modern Optics; 
+	D. A. Steck; Revision 1.8.3, 25 July 2021, p94-100, (2006)">Steck 2006</a>, 
+	<a class="citation" href="https://doi.org/10.1007/978-94-007-7545-9" 
+	title="Fundamentals of Fluorescence Microscopy; 
+	P. P. Mondal and A. Diaspro; p16-17, ISBN 978-94-007-7544-2, 
+	ISBN 978-94-007-7545-9 (eBook)(2014)">Mondal 2014</a> and	
+	<a class="citation" href="https://optics.byu.edu/textbook"
+	title="Physics of Light and Optics; 
+	J. Peatross and M. Ware; July 8, 2022 Revision, p290-296, 
+	ISBN 978-1-312-92927-2, (2015)">Peatross 2015</a> the intensity \(I\) as a 
+	function of the beam radius \(r\) and axial displacement \(z\) is:
+	
+	\[ I(r,z) = I_0 \left(\frac{w_0}{w(z)}\right)^2 
+	\exp \left(\frac{-2r^2}{w(z)^2}\right) \tag{1}\]
+	
+	where,
+	
+	\[w(z) = w_0\sqrt{1 + \left(\frac{z}{z_R}\right)^2} \tag{2}\]
+	
+	and
+	
+	\[z_R = \frac{\pi w_0^2 n}{\lambda_0} \tag{3}\]
+	
+	Here \(I_0\) is the peak intensity, \(w_0\) is the 'beam waist' (narrowest 
+	<em>radius</em>), \(n\) is the refractive index of the medium, \(\lambda_0\) is
+	the <em>vacuum</em> wavelength and \(z_R\) is the 'Rayleigh range'.
+	</p>
+
+</section>
+</body>
+</html>
