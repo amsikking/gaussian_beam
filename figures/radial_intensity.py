@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # Plot:
     r_m = np.linspace(-2 * w0_um, 2 * w0_um, 1000)
     Ir0 = intensity(r_m, 0, zr_m, w0_um)
-    Irzr = intensity(r_m, zr_m, zr_m, w0_um)
+    Irz = intensity(r_m, zr_m, zr_m, w0_um)
 
     import matplotlib.pyplot as plt
     fig, ax = plt.subplots()
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     ax.set_ylabel('Intensity (normalised)')
     ax.set_xlabel('r (um)')
     ax.plot(r_m, Ir0, label='z=0', linestyle='-', color='b')
-    ax.plot(r_m, Irzr, label='z=ZR', linestyle='--', color='b')
+    ax.plot(r_m, Irz, label='z=ZR', linestyle='--', color='b')
     ax.axvline(x=w0_um, label='w0_um', linestyle='-.', color='r')
     ax.axvline(
         x=w0_um * 2**0.5, label='sqrt(2) w0_um', linestyle=':', color='r')
