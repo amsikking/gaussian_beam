@@ -2,39 +2,49 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+  <head>
 	<meta charset="utf-8">
-	<title>Gaussian beam: Rayleigh range</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/prism.css">
     <script src="javascript/python-highlighting/prism.js"></script>
     <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     <script src="javascript/update_figures.js"></script>
     <script src="javascript/reference_list/reference_list.js"></script>
-</head>
+	<title>amsikking: Rayleigh range</title>
+  </head>
 
-<body>
-<section>
-	<a href="https://amsikking.github.io/">Home page</a>
-	<h1>amsikking: Gaussian beam</h1>
-	<a href="./index.html">Index</a>
+  <body>
+  	<header>
+	  <nav>
+	    <ul>
+		  <li><h1 style="margin-top: 0rem; margin-left: 1rem; margin-right: 1rem">amsikking:</h1></li>
+		  <li><a href="https://amsikking.github.io/">Home page</a></li>
+		  <li><a href="https://github.com/amsikking/gaussian_beam">GitHub</a></li>
+	    </ul>
+	  </nav>
+	</header>
 
-	<h2>Rayleigh range</h2>
-	<p>
-	From the definition:
-	
-	\[z_R = \frac{\pi w_0^2 n}{\lambda_0} \tag{1}\]
-	
-	Having an expectation of propagation length for a given beam diameter can be 
-	useful. For example, a 1mm beam diameter has a Rayleigh range of ~1.5m:
+	<main>
+	  <h1>Gaussian beam</h1>
+	  <p>Equations and derivations, with calculations and plots in Python.</p>
+	  <a href="./index.html">Contents</a>
+	  <section>
+		<h2>Rayleigh range</h2>
+		<p>
+		From the definition:
+		
+		\[z_R = \frac{\pi w_0^2 n}{\lambda_0} \tag{1}\]
+		
+		Having an expectation of propagation length for a given beam diameter can be 
+		useful. For example, a 1mm beam diameter has a Rayleigh range of ~1.5m:
+		</p>
 
-	</p>
-
-	<figure>
-    <img src="figures/rayleigh_range.png" alt="rayleigh_range.png">
-    <figcaption>(<a href="figures/rayleigh_range.py">Python script</a>)</figcaption>
-	</figure>
-
-</section>
-</body>
+		<figure>
+		  <img src="figures/rayleigh_range.png" alt="rayleigh_range.png">
+		  <figcaption>(<a href="figures/rayleigh_range.py">Python script</a>)</figcaption>
+		</figure>
+	  </section>
+	</main>
+  </body>
 </html>

@@ -2,74 +2,85 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+  <head>
 	<meta charset="utf-8">
-	<title>Gaussian beam: Total power</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/prism.css">
     <script src="javascript/python-highlighting/prism.js"></script>
     <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     <script src="javascript/update_figures.js"></script>
     <script src="javascript/reference_list/reference_list.js"></script>
-</head>
+	<title>amsikking: Total power</title>
+  </head>
 
-<body>
-<section>
-	<a href="https://amsikking.github.io/">Home page</a>
-	<h1>amsikking: Gaussian beam</h1>
-	<a href="./index.html">Index</a>
+  <body>
+  	<header>
+	  <nav>
+	    <ul>
+		  <li><h1 style="margin-top: 0rem; margin-left: 1rem; margin-right: 1rem">amsikking:</h1></li>
+		  <li><a href="https://amsikking.github.io/">Home page</a></li>
+		  <li><a href="https://github.com/amsikking/gaussian_beam">GitHub</a></li>
+	    </ul>
+	  </nav>
+	</header>
 
-	<h2>Total power</h2>
-	<p>
-	From the definitions (1) and (2):
-	
-	\[ I(r,z) = I_0 \left(\frac{w_0}{w(z)}\right)^2 
-	\exp \left(\frac{-2r^2}{w(z)^2}\right) \tag{1}\]
-	
-	\[w(z) = w_0\sqrt{1 + \left(\frac{z}{z_R}\right)^2} \tag{2}\]
-	
-	we can see that the intensity at the beam waist (\(z=0\)) follows a Gaussian 
-	profile:
-	
-	\[ I(r,0) = I_0 \exp \left(\frac{-2r^2}{w_0^2}\right) \tag{3}\]
+	<main>
+	  <h1>Gaussian beam</h1>
+	  <p>Equations and derivations, with calculations and plots in Python.</p>
+	  <a href="./index.html">Contents</a>
+	  <section>
+		<h2>Total power</h2>
+		<p>
+		From the definitions (1) and (2):
+		
+		\[ I(r,z) = I_0 \left(\frac{w_0}{w(z)}\right)^2 
+		\exp \left(\frac{-2r^2}{w(z)^2}\right) \tag{1}\]
+		
+		\[w(z) = w_0\sqrt{1 + \left(\frac{z}{z_R}\right)^2} \tag{2}\]
+		
+		we can see that the intensity at the beam waist (\(z=0\)) follows a Gaussian 
+		profile:
+		
+		\[ I(r,0) = I_0 \exp \left(\frac{-2r^2}{w_0^2}\right) \tag{3}\]
 
-	We can find the total power \(P_0\) in the beam by integrating with the 
-	<em>'shell'</em> method 
-	(<a class="citation" 
-	href="https://www.cengage.com/c/calculus-10e-larson/9781285057095/" 
-	title="Calculus; R. Larson and B.H. Edwards; 
-	Revision 10, p457-458,
-	ISBN-13: 9781285057095, ISBN-13: 9780357690529 (eBook),
-	(2014)">Larson 2014</a>):
-	
-	\[ P_0 = 2\pi \int_0^{\infty} rI(r,0) dr \tag{4}\]
-	
-	which we can write explicitly as:
-	
-	\[ P_0 = 2\pi I_0 \int_0^{\infty} r 
-	\exp \left(\frac{-2r^2}{w_0^2}\right) dr \tag{5}\]
-	
-	This could be tricky to solve but fortunately from (3) we see that:
-	
-	\[ \frac{d}{dr} I(r,0) = -\frac{4}{w_0^2} rI(r,0) \tag{6}\]
-	
-	which we can rewrite as:
-	
-	\[ \int rI(r,0) dr = -\frac{1}{4}w_0^2 I(r,0) \tag{7}\]
-	
-	So now we can evaluate (4) to a solvable form:
-	
-	\[ P_0 = 2\pi \left[ -\frac{1}{4}w_0^2 I(r,0) \right]_0^{\infty} \tag{8}\]
-	
-	Tidying up gives the final form:
-	
-	\[ P_0 = \frac{1}{2} \pi I_0 w_0^2 \tag{9}\]
-	
-	or alternativley:
-	
-	\[ I_0 = \frac{2P_0}{\pi w_0^2} \tag{10}\]
-	</p>
-
-</section>
-</body>
+		We can find the total power \(P_0\) in the beam by integrating with the 
+		<em>'shell'</em> method 
+		(<a class="citation" 
+		href="https://www.cengage.com/c/calculus-10e-larson/9781285057095/" 
+		title="Calculus; R. Larson and B.H. Edwards; 
+		Revision 10, p457-458,
+		ISBN-13: 9781285057095, ISBN-13: 9780357690529 (eBook),
+		(2014)">Larson 2014</a>):
+		
+		\[ P_0 = 2\pi \int_0^{\infty} rI(r,0) dr \tag{4}\]
+		
+		which we can write explicitly as:
+		
+		\[ P_0 = 2\pi I_0 \int_0^{\infty} r 
+		\exp \left(\frac{-2r^2}{w_0^2}\right) dr \tag{5}\]
+		
+		This could be tricky to solve but fortunately from (3) we see that:
+		
+		\[ \frac{d}{dr} I(r,0) = -\frac{4}{w_0^2} rI(r,0) \tag{6}\]
+		
+		which we can rewrite as:
+		
+		\[ \int rI(r,0) dr = -\frac{1}{4}w_0^2 I(r,0) \tag{7}\]
+		
+		So now we can evaluate (4) to a solvable form:
+		
+		\[ P_0 = 2\pi \left[ -\frac{1}{4}w_0^2 I(r,0) \right]_0^{\infty} \tag{8}\]
+		
+		Tidying up gives the final form:
+		
+		\[ P_0 = \frac{1}{2} \pi I_0 w_0^2 \tag{9}\]
+		
+		or alternativley:
+		
+		\[ I_0 = \frac{2P_0}{\pi w_0^2} \tag{10}\]
+		</p>
+	  </section>
+	</main>
+  </body>
 </html>

@@ -2,58 +2,69 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+  <head>
 	<meta charset="utf-8">
-	<title>Gaussian beam: Axial intensity</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/prism.css">
     <script src="javascript/python-highlighting/prism.js"></script>
     <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     <script src="javascript/update_figures.js"></script>
     <script src="javascript/reference_list/reference_list.js"></script>
-</head>
+	<title>amsikking: Axial Intensity</title>
+  </head>
 
-<body>
-<section>
-	<a href="https://amsikking.github.io/">Home page</a>
-	<h1>amsikking: Gaussian beam</h1>
-	<a href="./index.html">Index</a>
+  <body>
+  	<header>
+	  <nav>
+	    <ul>
+		  <li><h1 style="margin-top: 0rem; margin-left: 1rem; margin-right: 1rem">amsikking:</h1></li>
+		  <li><a href="https://amsikking.github.io/">Home page</a></li>
+		  <li><a href="https://github.com/amsikking/gaussian_beam">GitHub</a></li>
+	    </ul>
+	  </nav>
+	</header>
 
-	<h2>Axial Intensity</h2>
-	<p>
-	From the definitions (1) and (2):
-	
-	\[ I(r,z) = I_0 \left(\frac{w_0}{w(z)}\right)^2 
-	\exp \left(\frac{-2r^2}{w(z)^2}\right) \tag{1}\]
-	
-	\[w(z) = w_0\sqrt{1 + \left(\frac{z}{z_R}\right)^2} \tag{2}\]
+	<main>
+	  <h1>Gaussian beam</h1>
+	  <p>Equations and derivations, with calculations and plots in Python.</p>
+	  <a href="./index.html">Contents</a>
+	  <section>
+		<h2>Axial Intensity</h2>
+		<p>
+		From the definitions (1) and (2):
+		
+		\[ I(r,z) = I_0 \left(\frac{w_0}{w(z)}\right)^2 
+		\exp \left(\frac{-2r^2}{w(z)^2}\right) \tag{1}\]
+		
+		\[w(z) = w_0\sqrt{1 + \left(\frac{z}{z_R}\right)^2} \tag{2}\]
 
-	for the axial intensity (\(r=0\)) we can write (1) as:
-	
-	\[ \frac{I(0,z)}{I_0} = \left(\frac{w_0}{w(z)}\right)^2 \tag{3}\]
+		for the axial intensity (\(r=0\)) we can write (1) as:
+		
+		\[ \frac{I(0,z)}{I_0} = \left(\frac{w_0}{w(z)}\right)^2 \tag{3}\]
 
-	which simplifies to a <em>Lorentzian</em> profile:
-	
-	\[ \frac{I(0,z)}{I_0} = \frac{1}{1 + \left(\frac{z}{z_R}\right)^2} \tag{4}\]
+		which simplifies to a <em>Lorentzian</em> profile:
+		
+		\[ \frac{I(0,z)}{I_0} = \frac{1}{1 + \left(\frac{z}{z_R}\right)^2} \tag{4}\]
 
-	So at the Rayleigh range the intensity will half:
-	
-	\[ \frac{I(0,z_R)}{I_0} = \frac{1}{2} \tag{5}\]
-	
-	and therefore the 'full width half max' (FWHM) of a Gaussian beam, or the 
-	<em>confocal parameter</em>, is twice the Rayleigh range:
-	
-	\[ z_{FWHM} = 2z_R \tag{6}\]
-	
-	The 90% and 10% limits are found at \(z_R/3\) and \(3z_R\) (i.e beam 
-	<em>lengths</em> of \(2z_R/3\) and \(6z_R\)):
-	</p>
-	
-	<figure>
-    <img src="figures/axial_intensity.png" alt="axial_intensity.png">
-    <figcaption>(<a href="figures/axial_intensity.py">Python script</a>)</figcaption>
-	</figure>
-	
-</section>
-</body>
+		So at the Rayleigh range the intensity will half:
+		
+		\[ \frac{I(0,z_R)}{I_0} = \frac{1}{2} \tag{5}\]
+		
+		and therefore the 'full width half max' (FWHM) of a Gaussian beam, or the 
+		<em>confocal parameter</em>, is twice the Rayleigh range:
+		
+		\[ z_{FWHM} = 2z_R \tag{6}\]
+		
+		The 90% and 10% limits are found at \(z_R/3\) and \(3z_R\) (i.e beam 
+		<em>lengths</em> of \(2z_R/3\) and \(6z_R\)):
+		</p>
+		
+		<figure>
+		  <img src="figures/axial_intensity.png" alt="axial_intensity.png">
+		  <figcaption>(<a href="figures/axial_intensity.py">Python script</a>)</figcaption>
+		</figure>
+	  </section>
+	</main>
+  </body>
 </html>

@@ -2,76 +2,86 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+  <head>
 	<meta charset="utf-8">
-	<title>Gaussian beam: Beam profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/prism.css">
     <script src="javascript/python-highlighting/prism.js"></script>
     <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     <script src="javascript/update_figures.js"></script>
     <script src="javascript/reference_list/reference_list.js"></script>
-</head>
+	<title>amsikking: Radial Intensity</title>
+  </head>
 
-<body>
-<section>
-	<a href="https://amsikking.github.io/">Home page</a>
-	<h1>amsikking: Gaussian beam</h1>
-	<a href="./index.html">Index</a>
+  <body>
+  	<header>
+	  <nav>
+	    <ul>
+		  <li><h1 style="margin-top: 0rem; margin-left: 1rem; margin-right: 1rem">amsikking:</h1></li>
+		  <li><a href="https://amsikking.github.io/">Home page</a></li>
+		  <li><a href="https://github.com/amsikking/gaussian_beam">GitHub</a></li>
+	    </ul>
+	  </nav>
+	</header>
 
-	<h2>Beam profile</h2>
-	<p>
-	From the definitions (1) and (2):
-	
-	\[ I(r,z) = I_0 \left(\frac{w_0}{w(z)}\right)^2 
-	\exp \left(\frac{-2r^2}{w(z)^2}\right) \tag{1}\]
-	
-	\[w(z) = w_0\sqrt{1 + \left(\frac{z}{z_R}\right)^2} \tag{2}\]
+	<main>
+	  <h1>Gaussian beam</h1>
+	  <p>Equations and derivations, with calculations and plots in Python.</p>
+	  <a href="./index.html">Contents</a>
+	  <section>
+		<h2>Beam profile</h2>
+		<p>
+		From the definitions (1) and (2):
+		
+		\[ I(r,z) = I_0 \left(\frac{w_0}{w(z)}\right)^2 
+		\exp \left(\frac{-2r^2}{w(z)^2}\right) \tag{1}\]
+		
+		\[w(z) = w_0\sqrt{1 + \left(\frac{z}{z_R}\right)^2} \tag{2}\]
 
-	if we set \(r=w(z)\), then:
-	
-	\[ I(w(z),z) = \frac{1}{e^2} I_0 \left(\frac{w_0}{w(z)}\right)^2 \tag{3}\]
+		if we set \(r=w(z)\), then:
+		
+		\[ I(w(z),z) = \frac{1}{e^2} I_0 \left(\frac{w_0}{w(z)}\right)^2 \tag{3}\]
 
-	which we can re-write in terms of the axial intensity:
-	
-	\[ I(w(z),z) = \frac{1}{e^2} I(0,z) \tag{4}\]
+		which we can re-write in terms of the axial intensity:
+		
+		\[ I(w(z),z) = \frac{1}{e^2} I(0,z) \tag{4}\]
 
-	i.e. the radius \(r=w(z)\) traces out the axial intensity at the 
-	<em>'one-over e squared'</em> limit (~13.5%), which we can consider the 
-	<em>'beam profile'</em> as a function of \(z\).
-	</p>
-	<p>
-	Sometimes the 'full width half max' (FWHM) is more useful, which we can find 
-	by setting \(r=\frac{FWHM(z)}{2}\) in equation (4), and choosing the factor 
-	\(\frac{1}{2}\) (instead of \(\frac{1}{e^2}\)):
-	
-	\[ I(\frac{FWHM(z)}{2},z) = \frac{1}{2} I(0,z) \tag{5}\]
+		i.e. the radius \(r=w(z)\) traces out the axial intensity at the 
+		<em>'one-over e squared'</em> limit (~13.5%), which we can consider the 
+		<em>'beam profile'</em> as a function of \(z\).
+		</p>
+		<p>
+		Sometimes the 'full width half max' (FWHM) is more useful, which we can find 
+		by setting \(r=\frac{FWHM(z)}{2}\) in equation (4), and choosing the factor 
+		\(\frac{1}{2}\) (instead of \(\frac{1}{e^2}\)):
+		
+		\[ I(\frac{FWHM(z)}{2},z) = \frac{1}{2} I(0,z) \tag{5}\]
 
-	So by comparing (5) to (1), we see that the exponential term should match the 
-	'half', which gives:
-	
-	\[ \exp \left(\frac{-2(\frac{FWHM(z)}{2})^2}{w(z)^2}\right) = 
-	\frac{1}{2} \tag{6}\]
+		So by comparing (5) to (1), we see that the exponential term should match the 
+		'half', which gives:
+		
+		\[ \exp \left(\frac{-2(\frac{FWHM(z)}{2})^2}{w(z)^2}\right) = 
+		\frac{1}{2} \tag{6}\]
 
-	taking the natural log leads to:
-	
-	\[ -\frac{1}{2} \left(\frac{FWHM(z)}{w(z)}\right)^2 = \ln1 - \ln2 \tag{7}\]
+		taking the natural log leads to:
+		
+		\[ -\frac{1}{2} \left(\frac{FWHM(z)}{w(z)}\right)^2 = \ln1 - \ln2 \tag{7}\]
 
-	which simplifies to a factor of ~1.18:
+		which simplifies to a factor of ~1.18:
 
-	\[ FWHM(z) = \sqrt{2\ln2} \; w(z) \tag{8}\]
-	
-	A similar derivation can be done for the 90% limit giving a factor of ~0.46:
-	
-	\[ FW90M(z) = \sqrt{2\ln(10/9)} \; w(z) \tag{8}\]
-	
-	</p>
-	
-	<figure>
-    <img src="figures/beam_profile.png" alt="beam_profile.png">
-    <figcaption>(<a href="figures/beam_profile.py">Python script</a>)</figcaption>
-	</figure>
-
-</section>
-</body>
+		\[ FWHM(z) = \sqrt{2\ln2} \; w(z) \tag{8}\]
+		
+		A similar derivation can be done for the 90% limit giving a factor of ~0.46:
+		
+		\[ FW90M(z) = \sqrt{2\ln(10/9)} \; w(z) \tag{8}\]
+		</p>
+		
+		<figure>
+		  <img src="figures/beam_profile.png" alt="beam_profile.png">
+		  <figcaption>(<a href="figures/beam_profile.py">Python script</a>)</figcaption>
+		</figure>
+	  </section>
+	</main>
+  </body>
 </html>

@@ -2,46 +2,57 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+  <head>
 	<meta charset="utf-8">
-	<title>Gaussian beam: Numerical aperture</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/prism.css">
     <script src="javascript/python-highlighting/prism.js"></script>
     <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     <script src="javascript/update_figures.js"></script>
     <script src="javascript/reference_list/reference_list.js"></script>
-</head>
+	<title>amsikking: Numerical aperture</title>
+  </head>
 
-<body>
-<section>
-	<a href="https://amsikking.github.io/">Home page</a>
-	<h1>amsikking: Gaussian beam</h1>
-	<a href="./index.html">Index</a>
+  <body>
+  	<header>
+	  <nav>
+	    <ul>
+		  <li><h1 style="margin-top: 0rem; margin-left: 1rem; margin-right: 1rem">amsikking:</h1></li>
+		  <li><a href="https://amsikking.github.io/">Home page</a></li>
+		  <li><a href="https://github.com/amsikking/gaussian_beam">GitHub</a></li>
+	    </ul>
+	  </nav>
+	</header>
 
-	<h2>Numerical aperture</h2>
-	<p>
-	From the definitions for the Rayleigh range \(z_R\) and numerical aperture \(NA\):
+	<main>
+	  <h1>Gaussian beam</h1>
+	  <p>Equations and derivations, with calculations and plots in Python.</p>
+	  <a href="./index.html">Contents</a>
+	  <section>
+		<h2>Numerical aperture</h2>
+		<p>
+		From the definitions for the Rayleigh range \(z_R\) and numerical aperture \(NA\):
 
-	\[z_R = \frac{\pi w_0^2 n}{\lambda_0} \tag{1}\]
-	
-	\[ NA = n \sin\theta \tag{2}\]
-	
-	and from the derivation of the beam divergence angle \(\theta\) in the 
-	<em>paraxial</em> limit:
-	
-	\[ \theta \approx \frac{w_0}{z_R} \tag{3}\]
+		\[z_R = \frac{\pi w_0^2 n}{\lambda_0} \tag{1}\]
+		
+		\[ NA = n \sin\theta \tag{2}\]
+		
+		and from the derivation of the beam divergence angle \(\theta\) in the 
+		<em>paraxial</em> limit:
+		
+		\[ \theta \approx \frac{w_0}{z_R} \tag{3}\]
 
-	we can combine (1) and (3) to get:
-	
-	\[ \theta \approx \frac{\lambda_0}{\pi w_0 n} \tag{4}\]
+		we can combine (1) and (3) to get:
+		
+		\[ \theta \approx \frac{\lambda_0}{\pi w_0 n} \tag{4}\]
 
-	and therefore the numerical aperture, also in the <em>paraxial</em> limit 
-	\(\sin\theta \approx \theta\), is:
-	
-	\[ NA \approx \frac{\lambda_0}{\pi w_0} \tag{3}\]
-	</p>
-
-</section>
-</body>
+		and therefore the numerical aperture, also in the <em>paraxial</em> limit 
+		\(\sin\theta \approx \theta\), is:
+		
+		\[ NA \approx \frac{\lambda_0}{\pi w_0} \tag{3}\]
+		</p>
+	  </section>
+	</main>
+  </body>
 </html>

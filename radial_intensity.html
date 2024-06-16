@@ -2,57 +2,68 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+  <head>
 	<meta charset="utf-8">
-	<title>Gaussian beam: Radial intensity</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/prism.css">
     <script src="javascript/python-highlighting/prism.js"></script>
     <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     <script src="javascript/update_figures.js"></script>
     <script src="javascript/reference_list/reference_list.js"></script>
-</head>
+	<title>amsikking: Radial Intensity</title>
+  </head>
 
-<body>
-<section>
-	<a href="https://amsikking.github.io/">Home page</a>
-	<h1>amsikking: Gaussian beam</h1>
-	<a href="./index.html">Index</a>
+  <body>
+  	<header>
+	  <nav>
+	    <ul>
+		  <li><h1 style="margin-top: 0rem; margin-left: 1rem; margin-right: 1rem">amsikking:</h1></li>
+		  <li><a href="https://amsikking.github.io/">Home page</a></li>
+		  <li><a href="https://github.com/amsikking/gaussian_beam">GitHub</a></li>
+	    </ul>
+	  </nav>
+	</header>
 
-	<h2>Radial Intensity</h2>
-	<p>
-	From the definitions (1) and (2):
-	
-	\[ I(r,z) = I_0 \left(\frac{w_0}{w(z)}\right)^2 
-	\exp \left(\frac{-2r^2}{w(z)^2}\right) \tag{1}\]
-	
-	\[w(z) = w_0\sqrt{1 + \left(\frac{z}{z_R}\right)^2} \tag{2}\]
+	<main>
+	  <h1>Gaussian beam</h1>
+	  <p>Equations and derivations, with calculations and plots in Python.</p>
+	  <a href="./index.html">Contents</a>
+	  <section>
+		<h2>Radial Intensity</h2>
+		<p>
+		From the definitions (1) and (2):
+		
+		\[ I(r,z) = I_0 \left(\frac{w_0}{w(z)}\right)^2 
+		\exp \left(\frac{-2r^2}{w(z)^2}\right) \tag{1}\]
+		
+		\[w(z) = w_0\sqrt{1 + \left(\frac{z}{z_R}\right)^2} \tag{2}\]
 
-	we can see that in general, for any value of \(z\), the radial intensity follows
-	a Gaussian profile (i.e. \(r\) exists only in the form of \( e^{-r^2} \)). So for
-	example if we look at the beam waist \(z=0\):
-	
-	\[ \frac{I(r,0)}{I_0} = \exp \left(\frac{-2r^2}{w_0^2}\right) \tag{3}\]
+		we can see that in general, for any value of \(z\), the radial intensity follows
+		a Gaussian profile (i.e. \(r\) exists only in the form of \( e^{-r^2} \)). So for
+		example if we look at the beam waist \(z=0\):
+		
+		\[ \frac{I(r,0)}{I_0} = \exp \left(\frac{-2r^2}{w_0^2}\right) \tag{3}\]
 
-	If we then pick \(r=w_0\), we see that \(w_0\) is the 
-	<em>'one-over e squared'</em> radius, i.e. the distance at which the intensity 
-	has fallen to ~13.5%:
-	
-	\[ \frac{I(w_0,0)}{I_0} = \frac{1}{e^2} \tag{4}\]
+		If we then pick \(r=w_0\), we see that \(w_0\) is the 
+		<em>'one-over e squared'</em> radius, i.e. the distance at which the intensity 
+		has fallen to ~13.5%:
+		
+		\[ \frac{I(w_0,0)}{I_0} = \frac{1}{e^2} \tag{4}\]
 
-	As an alternative example, we can look at the profile at the Rayleigh range:
-	
-	\[ \frac{I(r,z_R)}{I_0} = \frac{1}{2} 
-	\exp \left(\frac{-r^2}{w_0^2}\right) \tag{5}\]
-	
-	i.e. still a Gaussian, but with half the amplitude and &Sqrt;2 wider:
-	</p>
+		As an alternative example, we can look at the profile at the Rayleigh range:
+		
+		\[ \frac{I(r,z_R)}{I_0} = \frac{1}{2} 
+		\exp \left(\frac{-r^2}{w_0^2}\right) \tag{5}\]
+		
+		i.e. still a Gaussian, but with half the amplitude and &Sqrt;2 wider:
+		</p>
 
-	<figure>
-    <img src="figures/radial_intensity.png" alt="radial_intensity.png">
-    <figcaption>(<a href="figures/radial_intensity.py">Python script</a>)</figcaption>
-	</figure>
-
-</section>
-</body>
+		<figure>
+		  <img src="figures/radial_intensity.png" alt="radial_intensity.png">
+		  <figcaption>(<a href="figures/radial_intensity.py">Python script</a>)</figcaption>
+		</figure>
+	  </section>
+	</main>
+  </body>
 </html>
